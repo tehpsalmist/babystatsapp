@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Steward New Baby Guessing Game</title>
+		<link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/styles.css">
+	</head>
+	<body>
+
+		<div class="container">
+
+			<header class="row">
+				<div class="col text-center">
+					<h1>The Steward New Baby Guessing Game</h1>
+					<h4>Step on up and try your luck!</h4>
+				</div>
+			</header>
+
+			<main>
+				<div class="row d-flex justify-content-center">
+					
+					<div id="image-container" class="col-8 col-md-6 d-flex justify-content-center align-items-center"> <!--Start Image Area-->
+						<div class="col-12 col-md-8 vertical-align-self">
+							<img class="img-fluid rounded-circle" src="images/baby-ultrasound.jpg">
+							<h4 class="text-center blue"><span class="pink">We </span>can't <span class="pink">wait </span>to <span class="pink">meet </span>you!</h4>
+							<img class="img-fluid rounded-circle" src="images/thumbs-up-ultrasound.jpg">
+						</div>
+					</div> <!--End Image Area-->
+					
+					<div id="form-container" class="col-12 col-md-6"> <!--Start Form-->
+						<div class="col-12 gap"></div>
+						<form>
+							<h3 class="text-center">What do you think?</h3>
+							<p>
+								Your Name:
+								<input type="text" id="guesser" data-bind="textInput: guesserName" placeholder="Guesser's Name">
+							</p>
+							<!--<p>
+								Password (to edit your guess):
+								<input id="password" name="password" data-bind="attr: {type: showHidePassword}, textInput: password">
+								<button id="show-password" data-bind="click: toggleShowPassword">
+									Show/Hide
+								</button>
+							</p>-->
+							<p>Baby's First Name:
+							<input type="text" id="first" placeholder="ex: Frederick" data-bind="textInput: firstName" required>
+							</p>
+							<p>
+								Baby's Middle Name:
+								<input type="text" id="middle" placeholder="ex: Robert" data-bind="textInput: middleName" required>
+							</p>
+							<p>Gender:
+							<select id="gender" data-bind="value: gender" required>
+								<option>Boy</option>
+								<option>Girl</option>
+							</select>
+							</p>
+							<p>
+								Pounds:
+								<input type="text" id="lbs" placeholder="an integer 0-20" data-bind="textInput: lbs" required>
+							</p>
+							<p>
+								Ounces:
+								<input type="text" id="oz" placeholder="an integer 0-15" data-bind="textInput: oz" required>
+							</p>
+							<p>
+								Length:
+								<input type="text" id="length" placeholder="Inches, ex: 23" data-bind="textInput: length" required>
+							</p>
+							<p>
+								Birthday:
+								<input type="date" id="day"  data-bind="value: day" required>
+							</p>
+							<p>
+								Time:
+								<select id="time"  data-bind="value: time" required>
+									<option value="Midnight">Midnight</option>
+									<option value="1:00am">1:00am</option>
+									<option value="2:00am">2:00am</option>
+									<option value="3:00am">3:00am</option>
+									<option value="4:00am">4:00am</option>
+									<option value="5:00am">5:00am</option>
+									<option value="6:00am">6:00am</option>
+									<option value="7:00am">7:00am</option>
+									<option value="8:00am">8:00am</option>
+									<option value="9:00am">9:00am</option>
+									<option value="10:00am">10:00am</option>
+									<option value="11:00am">11:00am</option>
+									<option value="Noon">Noon</option>
+									<option value="1:00pm">1:00pm</option>
+									<option value="2:00pm">2:00pm</option>
+									<option value="3:00pm">3:00pm</option>
+									<option value="4:00pm">4:00pm</option>
+									<option value="5:00pm">5:00pm</option>
+									<option value="6:00pm">6:00pm</option>
+									<option value="7:00pm">7:00pm</option>
+									<option value="8:00pm">8:00pm</option>
+									<option value="9:00pm">9:00pm</option>
+									<option value="10:00pm">10:00pm</option>
+									<option value="11:00pm">11:00pm</option>
+								</select>
+							</p>
+							<p class="text-center">
+								<input id="submit-button" class="btn btn-primary" type="submit" data-bind="click: submitGuess" value="Submit My Guesses">
+							</p>
+							<div class="row justify-content-center">
+								<div class="alert alert-warning col-11 col-sm-9 col-md-12 col-lg-9 text-center" role="alert" data-bind="css: {'display-none': alertNoInput}">
+									Looks like you forgot to fill in a field. &#x1F609;
+								</div>
+							</div>
+						</form>
+					</div> <!--End Form-->
+
+				</div> <!--Form Row-->
+
+				<section id="guess-summary" class="row" data-bind="css: {'display-none': showHideGuess}"> <!--Start Guess Summary-->
+					<h3 class="col-12 text-center">Your Guess Summary</h3>
+					<ul class="col-12 list-group d-flex flex-row flex-wrap">
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">First Name: <span class="font-weight-bold" data-bind="text: firstName"></span></li>
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">Middle Name: <span class="font-weight-bold" data-bind="text: middleName"></span></li>
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">Gender: <span class="font-weight-bold" data-bind="text: gender"></span></li>
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">Weight: <span><span class="font-weight-bold" data-bind="text: lbs"></span>lbs <span class="font-weight-bold" data-bind="text: oz"></span>oz</span></li>
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">Length: <span><span class="font-weight-bold" data-bind="text: length"></span>in</span></li>
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">Date: <span class="font-weight-bold" data-bind="text: day"></span></li>
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">Time: <span class="font-weight-bold" data-bind="text: time"></span></li>
+					</ul>
+					<div class="col-12 text-center share-button">
+						<button class="btn-lg btn-success" data-bind="click: shareGuessToWorld"><!--Share My Guess with the World!-->Post My Guess</button>
+						<p class="col-12"><!--Warning: Once you share, you won't be able to edit your guess!-->This will just post your guess locally, but stay tuned! Soon you'll be able to post your guess for all future users to see worldwide!</p>
+					</div>
+				</section> <!--End Guess Summary-->
+
+				<section id="shared-guesses" class="row"> <!--Start Shared Guesses-->
+					<h2 class="col-12 text-center">Here's the Consensus...</h2>
+					<ul class="list-group" data-bind="foreach: modelBindings">
+						<li class="list-group-item"><span data-bind="text: guesserName" class="font-weight-bold"></span> says, "<span data-bind="text: firstName" class="font-weight-bold"></span> <span data-bind="text: middleName" class="font-weight-bold"></span> Steward will be born a little <span data-bind="text: gender" class="text-lowercase font-weight-bold"></span>, <span data-bind="text: lbs" class="font-weight-bold"></span>lbs, <span data-bind="text: oz" class="font-weight-bold"></span>oz, and <span data-bind="text: length" class="font-weight-bold"></span>in on <span data-bind="text: day" class="font-weight-bold"></span> at <span data-bind="text: time" class="font-weight-bold"></span>."</li>						
+					</ul>
+				</section> <!--End Shared Guesses-->
+
+			</main>
+
+			<div class="row gap"></div>
+			<hr>
+			<div class="row gap"></div>
+
+			<footer class="row">
+				<div class="col text-center">
+					<h6 class="col-12">
+						Created By Ben Steward &copy; 2017
+					</h6>
+					<img id="insignia" class="mx-auto d-block" src="images/insignia.png">
+				</div>
+			</footer>
+
+		</div> <!--container-->
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script type='text/javascript' src='js/knockout-3.4.2.js'></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<!-- <script type="text/javascript" src="js/database.js"></script>
+		
+		<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBhzPTzisS3D_hnsCtQIgi2u8lEyvqw3lM",
+		    authDomain: "automatic-rite-173920.firebaseapp.com",
+		    databaseURL: "https://automatic-rite-173920.firebaseio.com",
+		    projectId: "automatic-rite-173920",
+		    storageBucket: "automatic-rite-173920.appspot.com"
+		  };
+		  firebase.initializeApp(config);
+		</script> -->
+	</body>
+</html>
