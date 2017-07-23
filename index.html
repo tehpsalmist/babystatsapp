@@ -12,17 +12,22 @@
 		<div class="container">
 
 			<header class="row">
-				<div class="col text-center">
+				<div class="col-12 gap"></div>
+				<div class="col-12 text-center">
 					<h1>The Steward New Baby Guessing Game</h1>
 					<h4>Step on up and try your luck!</h4>
 				</div>
 			</header>
 
+			<div class="row gap"></div>
+			<hr>
+			<div class="row gap"></div>
+
 			<main>
 				<div class="row d-flex justify-content-center">
 					
 					<div id="image-container" class="col-8 col-md-6 d-flex justify-content-center align-items-center"> <!--Start Image Area-->
-						<div class="col-12 col-md-8 vertical-align-self">
+						<div class="col-12 col-md-8 text-center">
 							<img class="img-fluid rounded-circle" src="images/baby-ultrasound.jpg">
 							<h4 class="text-center blue"><span class="pink">We </span>can't <span class="pink">wait </span>to <span class="pink">meet </span>you!</h4>
 							<img class="img-fluid rounded-circle" src="images/thumbs-up-ultrasound.jpg">
@@ -30,9 +35,12 @@
 					</div> <!--End Image Area-->
 					
 					<div id="form-container" class="col-12 col-md-6"> <!--Start Form-->
-						<div class="col-12 gap"></div>
-						<form>
+						<div class="col-12 gap-noshow gap"></div>
+						<form class="col-12">
 							<h3 class="text-center">What do you think?</h3>
+							<div class="alert alert-success col-11 text-center" role="alert" data-bind="css: {'display-none': alertNewEntry}">
+								You've already posted your guess, but since this is just a test version that isn't posting to the web, why not make a few more! &#x1F61C;
+							</div>
 							<p>
 								Your Name:
 								<input type="text" id="guesser" data-bind="textInput: guesserName" placeholder="Guesser's Name">
@@ -44,18 +52,20 @@
 									Show/Hide
 								</button>
 							</p>-->
-							<p>Baby's First Name:
-							<input type="text" id="first" placeholder="ex: Frederick" data-bind="textInput: firstName" required>
+							<p>
+								Baby's First Name:
+								<input type="text" id="first" placeholder="ex: Frederick" data-bind="textInput: firstName" required>
 							</p>
 							<p>
 								Baby's Middle Name:
 								<input type="text" id="middle" placeholder="ex: Robert" data-bind="textInput: middleName" required>
 							</p>
-							<p>Gender:
-							<select id="gender" data-bind="value: gender" required>
-								<option>Boy</option>
-								<option>Girl</option>
-							</select>
+							<p>
+								Gender:
+								<select id="gender" data-bind="value: gender" required>
+									<option>Boy</option>
+									<option>Girl</option>
+								</select>
 							</p>
 							<p>
 								Pounds:
@@ -109,14 +119,22 @@
 								<div class="alert alert-warning col-11 col-sm-9 col-md-12 col-lg-9 text-center" role="alert" data-bind="css: {'display-none': alertNoInput}">
 									Looks like you forgot to fill in a field. &#x1F609;
 								</div>
+								<div class="alert alert-success col-11 col-sm-9 col-md-12 col-lg-9 text-center" role="alert" data-bind="css: {'display-none': alertSuccess}">
+									Submitted! Review your guess below. &#x1F60A;
+								</div>
 							</div>
 						</form>
 					</div> <!--End Form-->
 
 				</div> <!--Form Row-->
 
+				<div class="row gap" data-bind="css: {'display-none': showHideGuess}"></div>
+				<hr data-bind="css: {'display-none': showHideGuess}">
+				<div class="row gap" data-bind="css: {'display-none': showHideGuess}"></div>
+
 				<section id="guess-summary" class="row" data-bind="css: {'display-none': showHideGuess}"> <!--Start Guess Summary-->
 					<h3 class="col-12 text-center">Your Guess Summary</h3>
+					<h6 class="col-12 text-center">Any edits you make above will update here, too!</h6>
 					<ul class="col-12 list-group d-flex flex-row flex-wrap">
 						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">First Name: <span class="font-weight-bold" data-bind="text: firstName"></span></li>
 						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item">Middle Name: <span class="font-weight-bold" data-bind="text: middleName"></span></li>
@@ -132,10 +150,14 @@
 					</div>
 				</section> <!--End Guess Summary-->
 
+				<div class="row gap"></div>
+				<hr>
+				<div class="row gap"></div>
+
 				<section id="shared-guesses" class="row"> <!--Start Shared Guesses-->
 					<h2 class="col-12 text-center">Here's the Consensus...</h2>
 					<ul class="list-group" data-bind="foreach: modelBindings">
-						<li class="list-group-item"><span data-bind="text: guesserName" class="font-weight-bold"></span> says, "<span data-bind="text: firstName" class="font-weight-bold"></span> <span data-bind="text: middleName" class="font-weight-bold"></span> Steward will be born a little <span data-bind="text: gender" class="text-lowercase font-weight-bold"></span>, <span data-bind="text: lbs" class="font-weight-bold"></span>lbs, <span data-bind="text: oz" class="font-weight-bold"></span>oz, and <span data-bind="text: length" class="font-weight-bold"></span>in on <span data-bind="text: day" class="font-weight-bold"></span> at <span data-bind="text: time" class="font-weight-bold"></span>."</li>						
+						<li class="list-group-item bg-pink" data-bind="css: {'bg-blue': genderVal}"><span data-bind="text: guesserName" class="font-weight-bold"></span> says, "<span data-bind="text: firstName" class="font-weight-bold"></span> <span data-bind="text: middleName" class="font-weight-bold"></span> Steward will be born a little <span data-bind="text: gender" class="text-lowercase font-weight-bold"></span>, <span data-bind="text: lbs" class="font-weight-bold"></span>lbs, <span data-bind="text: oz" class="font-weight-bold"></span>oz, and <span data-bind="text: length" class="font-weight-bold"></span>in on <span data-bind="text: day" class="font-weight-bold"></span> at <span data-bind="text: time" class="font-weight-bold"></span>."</li>						
 					</ul>
 				</section> <!--End Shared Guesses-->
 

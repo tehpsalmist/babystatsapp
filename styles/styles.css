@@ -6,6 +6,10 @@
 	color: lightblue;
 }
 
+.baby-img {
+	max-width: 250px;
+}
+
 .display-none {
 	display: none;
 }
@@ -18,12 +22,20 @@
 	height: 30px;
 }
 
+.bg-pink {
+	background-color: pink;
+}
+
+.bg-blue {
+	background-color: lightblue; 
+}
+
 #insignia {
 	max-width: 100px;
 }
 
 @media screen and (min-width: 768px) {
-	.gap {
+	.gap-noshow {
 		display: none;
 	}
 }
