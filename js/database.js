@@ -1,6 +1,12 @@
-/* var database = firebase.database().ref();
+var Model = ko.observableArray();
 
-var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
-starCountRef.on('value', function(snapshot) {
-  updateStarCount(postElement, snapshot.val());
-}); */
+var guesses = firebase.database().ref('guesses');
+
+guesses.on('child_added', function(data) {
+	Model.push(data.val());
+});
+
+var modelToDatabase = function(data) {
+	newGuess = guesses.push();
+	newGuess.set(data);
+}

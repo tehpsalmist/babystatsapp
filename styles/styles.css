@@ -30,6 +30,41 @@
 	background-color: lightblue; 
 }
 
+.fa {
+    font-size: 30px !important;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10%;
+    margin: 0 10px;
+}
+
+.fa:hover {
+	opacity: 0.8;
+	text-decoration: none;
+}
+
+.fa-twitter {
+	color: #00aced;
+}
+
+.fa-github {
+	color: black;
+}
+
+.fa-linkedin {
+	color: #007bb6;
+}
+
+.fa-facebook {
+	color: #3b5998;
+}
+
+.fa-instagram {
+	color: #bc2a8d;
+}
+
 #insignia {
 	max-width: 100px;
 }

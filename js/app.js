@@ -1,22 +1,8 @@
-var Model = ko.observableArray([{
-	'guesserName': 'Ben Steward',
-	//'password': 'password',
-	'firstName': 'Zechariah',
-	'middleName': 'Abraham',
-	'gender': 'Boy',
-	'lbs': '8',
-	'oz': '13',
-	'length': '22',
-	'day': '2017-07-26',
-	'time': 'Noon',
-	'genderVal': true
-}]);
-
-var newGuess = ko.observable({});
-
 var ViewModel = function() {
 
 	self = this;
+
+	this.modelBindings = ko.observableArray();
 
 	this.guesserName = ko.observable('');
 	//this.password = ko.observable('');
@@ -88,14 +74,15 @@ var ViewModel = function() {
 			'time': self.time(),
 			'genderVal': self.genderVal()
 		};
-		Model().push(self.guessObject);
-		self.modelBindings(Model());
 		self.showHideGuess(true);
 		self.alertSuccess(true);
 		self.clearFields();
+		modelToDatabase(self.guessObject);
 	};
 
-	this.modelBindings = ko.observable(Model());
+	self.modelBindings = ko.computed(function() {
+		return Model()
+	});
 
 };
 
