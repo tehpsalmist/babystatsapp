@@ -44,6 +44,8 @@ var ViewModel = function() {
 			};
 		} else {
 			self.alertNoInput(false);
+			self.alertSuccess(true);
+			self.showHideGuess(true);
 		};
 	};
 
