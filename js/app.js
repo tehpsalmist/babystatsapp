@@ -21,6 +21,7 @@ var ViewModel = function() {
 	this.alertNoInput = ko.observable(true);
 	this.alertSuccess = ko.observable(true);
 	this.alertNewEntry = ko.observable(true);
+	this.submittedForReview = ko.observable(false);
 	this.clearFields = function() {
 		self.guesserName('');
 		//self.password('');
@@ -41,6 +42,10 @@ var ViewModel = function() {
 			self.alertSuccess(false);
 			if (self.showHideGuess() === true) {
 				self.showHideGuess(false);
+			};
+			if (self.submittedForReview() === false) {
+				clickReview();
+				self.submittedForReview(true);
 			};
 		} else {
 			self.alertNoInput(false);
@@ -80,6 +85,7 @@ var ViewModel = function() {
 		self.alertSuccess(true);
 		self.clearFields();
 		modelToDatabase(self.guessObject);
+		clickShare();
 	};
 
 	self.modelBindings = ko.computed(function() {

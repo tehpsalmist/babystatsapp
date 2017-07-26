@@ -151,8 +151,8 @@
 					<h3 class="col-12 text-center">Your Guess Summary</h3>
 					<h6 class="col-12 text-center">Any edits you make above will update here, too!</h6>
 					<ul class="col-12 list-group d-flex flex-row flex-wrap">
-						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">First Name: <span class="font-weight-bold" data-bind="text: firstName"></span></p></li>
-						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">Middle Name: <span class="font-weight-bold" data-bind="text: middleName"></span></p></li>
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">First Name: <span class="font-weight-bold text-capitalize" data-bind="text: firstName"></span></p></li>
+						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">Middle Name: <span class="font-weight-bold text-capitalize" data-bind="text: middleName"></span></p></li>
 						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">Gender: <span class="font-weight-bold" data-bind="text: gender"></span></p></li>
 						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">Weight: <span><span class="font-weight-bold" data-bind="text: lbs"></span>lbs <span class="font-weight-bold" data-bind="text: oz"></span>oz</span></p></li>
 						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">Length: <span><span class="font-weight-bold" data-bind="text: length"></span>in</span></p></li>
@@ -172,7 +172,7 @@
 				<section id="shared-guesses" class="row text-center"> <!--Start Shared Guesses-->
 					<h2 class="col-12 text-center">Here's the Consensus...</h2>
 					<ul class="list-group mx-auto text-center" data-bind="foreach: modelBindings">
-						<li class="list-group-item bg-pink justify-content-center" data-bind="css: {'bg-blue': genderVal}"><p class="li-p"><span data-bind="text: guesserName" class="font-weight-bold"></span> says, "<span data-bind="text: firstName" class="font-weight-bold"></span> <span data-bind="text: middleName" class="font-weight-bold"></span> Steward will be born a little <span data-bind="text: gender" class="text-lowercase font-weight-bold"></span>, <span data-bind="text: lbs" class="font-weight-bold"></span>lbs, <span data-bind="text: oz" class="font-weight-bold"></span>oz, and <span data-bind="text: length" class="font-weight-bold"></span>in on <span data-bind="text: day" class="font-weight-bold"></span> at <span data-bind="text: time" class="font-weight-bold"></span>."</p></li>						
+						<li class="list-group-item bg-pink justify-content-center" data-bind="css: {'bg-blue': genderVal}"><p class="li-p"><span data-bind="text: guesserName" class="font-weight-bold text-capitalize"></span> says, "<span data-bind="text: firstName" class="font-weight-bold text-capitalize"></span> <span data-bind="text: middleName" class="font-weight-bold text-capitalize"></span> Steward will be born a little <span data-bind="text: gender" class="text-lowercase font-weight-bold"></span>, <span data-bind="text: lbs" class="font-weight-bold"></span>lbs, <span data-bind="text: oz" class="font-weight-bold"></span>oz, and <span data-bind="text: length" class="font-weight-bold"></span>in on <span data-bind="text: day" class="font-weight-bold"></span> at <span data-bind="text: time" class="font-weight-bold"></span>."</p></li>						
 					</ul>
 				</section> <!--End Shared Guesses-->
 
