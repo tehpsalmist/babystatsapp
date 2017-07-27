@@ -12,7 +12,7 @@
 
 .display-none {
 	display: none;
-}
+} /* This class is used to toggle alerts and other areas of the DOM based on clicks and other app.js functions */
 
 .share-button {
 	margin-top: 25px;
@@ -20,11 +20,11 @@
 
 .gap {
 	height: 30px;
-}
+} /* Cheesy artificial way to create spacing. Maybe I'll go back and add the proper bootstrap classes later. */
 
 .bg-pink {
 	background-color: pink;
-}
+} /* bg-pink and bg-blue are toggled using data-bindings based on the genderVal property of each guess. */
 
 .bg-blue {
 	background-color: lightblue; 
@@ -33,7 +33,7 @@
 .li-p {
 	margin: 0;
 	padding: 0;
-}
+} /* This class offsets bootstraps default treatment of <li>s, which left too much spacing. */
 
 .fa {
     font-size: 30px !important;
@@ -78,4 +78,4 @@
 	.gap-noshow {
 		display: none;
 	}
-}
+} /* I'm sure this wouldn't have been necessary if I had used bootstrap classes... */
