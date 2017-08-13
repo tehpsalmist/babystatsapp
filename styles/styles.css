@@ -38,19 +38,33 @@
 	background-color: lightblue; 
 }
 
+.collapsed {
+	height: 350px;
+}
+
+.guesses-ul-container {
+	height: 100%;
+  overflow: hidden;
+}
+
+.guesses-ul {
+  max-height: 100%;
+  overflow: auto;
+}
+
 .li-p {
 	margin: 0;
 	padding: 0;
 } /* This class offsets bootstraps default treatment of <li>s, which left too much spacing. */
 
 .fa {
-    font-size: 30px !important;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 10%;
-    margin: 0 10px;
+	font-size: 30px !important;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10%;
+	margin: 0 10px;
 }
 
 .fa:hover {

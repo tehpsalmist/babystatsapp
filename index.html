@@ -178,9 +178,14 @@
 
 				<section id="shared-guesses" class="row text-center"> <!--Start Shared Guesses-->
 					<h2 class="col-12 text-center">Here's the Consensus...</h2>
-					<ul class="list-group mx-auto text-center" data-bind="foreach: modelBindings">
-						<li class="list-group-item bg-pink justify-content-center" data-bind="css: {'bg-blue': genderVal}"><p class="li-p"><span data-bind="text: guesserName" class="font-weight-bold text-capitalize"></span> says, "<span data-bind="text: firstName" class="font-weight-bold text-capitalize"></span> <span data-bind="text: middleName" class="font-weight-bold text-capitalize"></span> Steward will be born a little <span data-bind="text: gender" class="text-lowercase font-weight-bold"></span>, <span data-bind="text: lbs" class="font-weight-bold"></span>lbs, <span data-bind="text: oz" class="font-weight-bold"></span>oz, and <span data-bind="text: length" class="font-weight-bold"></span>in on <span data-bind="text: day" class="font-weight-bold"></span> at <span data-bind="text: time" class="font-weight-bold"></span>."</p></li>						
-					</ul>
+					<button class="btn-sm btn-primary mx-auto mb-2" data-bind="click: collapseToggle"><span data-bind="text: buttonText"></span></button>
+					<div class="col-12" data-bind="css: {collapsed: collapse}">
+						<div class="col-12" data-bind="css: {'guesses-ul-container': collapse}">
+							<ul class="list-group mx-auto text-center" data-bind="foreach: modelBindings, css: {'guesses-ul': collapse}">
+								<li class="list-group-item bg-pink justify-content-center" data-bind="css: {'bg-blue': genderVal}"><p class="li-p"><span data-bind="text: guesserName" class="font-weight-bold text-capitalize"></span> says, "<span data-bind="text: firstName" class="font-weight-bold text-capitalize"></span> <span data-bind="text: middleName" class="font-weight-bold text-capitalize"></span> Steward will be born a little <span data-bind="text: gender" class="text-lowercase font-weight-bold"></span>, <span data-bind="text: lbs" class="font-weight-bold"></span>lbs, <span data-bind="text: oz" class="font-weight-bold"></span>oz, and <span data-bind="text: length" class="font-weight-bold"></span>in on <span data-bind="text: day" class="font-weight-bold"></span> at <span data-bind="text: time" class="font-weight-bold"></span>."</p></li>						
+							</ul>
+						</div>
+					</div>
 				</section> <!--End Shared Guesses-->
 
 				<div class="row gap"></div>

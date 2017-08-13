@@ -145,6 +145,19 @@ var ViewModel = function() {
 		clickShare();
 	};
 
+	// These observables are bound to the collapse/expand feature in #shared-guesses
+	this.buttonText = ko.observable('Collapse Shared Guesses')
+	this.collapse = ko.observable(false);
+	this.collapseToggle = function() {
+		if (self.collapse() === true) {
+			self.collapse(false);
+			self.buttonText('Collapse Shared Guesses');
+		} else {
+			self.collapse(true);
+			self.buttonText('Expand Shared Guesses');
+		};
+	};
+
 	/*
 	Every guessObject that has been passed to firebase is retrieved and this observable
 	updates automatically with each new entry (see database.js for details on the Model),
