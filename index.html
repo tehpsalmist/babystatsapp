@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>The Steward's New Baby Guessing Game</title>
 		<link rel="shortcut icon" type="image/x-icon" href="images/baby-icon.png">
-		<link rel="stylesheet" href="styles/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/bootstrap-4.0.0-beta/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="styles/styles.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
@@ -42,14 +42,16 @@
 					
 					<div id="image-container" class="col-12 col-md-6 d-flex justify-content-center align-items-center"> <!--Start Image Area-->
 						<div class="col-8 text-center">
-							<img class="img-fluid rounded-circle" src="images/baby-ultrasound.jpg">
-							<h4 class="text-center blue"><span class="pink">We </span>can't <span class="pink">wait </span>to <span class="pink">meet </span>you!</h4>
-							<img class="img-fluid rounded-circle" src="images/thumbs-up-ultrasound.jpg">
+							<img class="img-fluid rounded-circle" src="images/SamuelFlex.jpg">
+							<h4 class="text-center blue">The Man-child has arrived!</h4>
+							<img class="img-fluid rounded" src="images/Daddy-and-Sam.jpg">
+							<h4 class="text-center blue">Welcome to the world,<br><span class="darkblue">Samuel LeRoy Steward!</span></h4>
+							<img class="img-fluid rounded-circle" src="images/SamPhotoOp.jpeg">
 						</div>
 					</div> <!--End Image Area-->
 					
-					<div id="form-contain coler" class="d-flex align-items-center col-12 col-md-6"> <!--Start Form-->
-						<form class="col-12">
+					<div id="form-container" class="d-flex flex-wrap align-items-center justify-content-center col-12 col-md-6"> <!--Start Form-->
+						<form class="col-12 display-block">
 							<div class="col-12 gap-noshow gap"></div>
 							<h3 class="text-center">What do you think?</h3>
 							<div class="alert alert-success col-11 text-center" role="alert" data-bind="css: {'display-none': alertNewEntry}">
@@ -139,6 +141,11 @@
 								</div>
 							</div>
 						</form>
+						<div class="col-12">
+							<div class="col-8 mx-auto">
+								<img class="img-fluid rounded-circle" src="images/SamAwake.jpg">
+							</div>
+						</div>
 					</div> <!--End Form-->
 
 				</div> <!--Form Row-->
@@ -150,7 +157,7 @@
 				<section id="guess-summary" class="row" data-bind="css: {'display-none': showHideGuess}"> <!--Start Guess Summary-->
 					<h3 class="col-12 text-center">Your Guess Summary</h3>
 					<h6 class="col-12 text-center">Any edits you make above will update here, too!</h6>
-					<ul class="col-12 list-group d-flex flex-row flex-wrap">
+					<ul class="col-12 list-group d-flex flex-row flex-wrap justify-content-center">
 						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">First Name: <span class="font-weight-bold text-capitalize" data-bind="text: firstName"></span></p></li>
 						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">Middle Name: <span class="font-weight-bold text-capitalize" data-bind="text: middleName"></span></p></li>
 						<li class="col-12 col-md-6 col-lg-4 d-flex justify-content-around list-group-item"><p class="li-p">Gender: <span class="font-weight-bold" data-bind="text: gender"></span></p></li>
@@ -198,7 +205,7 @@
 							The Developer
 						</h4>
 						<p class="col-12 text-justify">
-							My name is Ben Steward, and I am a student of the Web! At the time of writing (July 2017) I am finishing up <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001">Udacity's Front-End Web Developer Nanodegree</a> and doing business development for a local <a href="https://cavalloagency.com">web design company</a>. I am also taking courses in Node.js, React, and Angular. You can check out the code behind this project in <a href="https://github.com/tehpsalmist/babystatsapp">my GitHub</a> repo, or if you're looking for a game to kill some time, try your hand at <a href="http://nonoabi.cf">No, No, Abi!</a>, a simple Frogger knock-off built on HTML5 Canvas (requires keyboard).
+							My name is Ben Steward, and I am a student of the Web! At the time of writing (July 2017) I am finishing up <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001">Udacity's Front-End Web Developer Nanodegree</a> and doing business development for a local web design company, <a href="https://cavalloagency.com">Cavallo Agency</a>. I am also taking courses in Node.js, React, and Angular. You can check out the code behind this project in <a href="https://github.com/tehpsalmist/babystatsapp">my GitHub</a> repo, or if you're looking for a game to kill some time, try your hand at <a href="http://nonoabi.cf">No, No, Abi!</a>, a simple Frogger knock-off built on HTML5 Canvas (requires keyboard--mobile touchpad to be released soon!).
 						</p>
 						<div class="col-12 text-center">
 							<a href="https://twitter.com/tehpsalmist" class="fa fa-twitter"></a>

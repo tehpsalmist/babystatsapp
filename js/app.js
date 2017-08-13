@@ -97,6 +97,7 @@ var ViewModel = function() {
 			self.alertSuccess(true);
 			self.showHideGuess(true);
 		};
+		window.location.hash = 'guess-summary';
 	};
 
 	/*this.toggleShowPassword = function() {
